@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - Ecogo</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Admin Panel - Volunteers</h1>
+  <div class="text-center mb-3">
+    <button id="deleteAll" class="btn btn-danger">🗑️ Delete All</button>
+  </div>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Age</th><th>Country</th><th>City</th><th>Role</th><th>Message</th>
+      </tr>
+    </thead>
+    <tbody id="volunteerList"></tbody>
+  </table>
+</div>
+
+<script>
+async function loadVolunteers() {
+  const res = await fetch("http://localhost:3000/volunteers");
+  const data = await res.json();
+
+  const tbody = document.getElementById("volunteerList");
+  tbody.innerHTML = "";
+
+  data.forEach(v => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${v.id}</td>
+        <td>${v.name}</td>
+        <td>${v.email}</td>
+        <td>${v.age}</td>
+        <td>${v.country}</td>
+        <td>${v.city}</td>
+        <td>${v.role}</td>
+        <td>${v.message}</td>
+      </tr>
+    `;
+  });
+}
+
+document.getElementById("deleteAll").addEventListener("click", async () => {
+  if (confirm("Видалити всі заявки?")) {
+    await fetch("http://localhost:3000/volunteers", { method: "DELETE" });
+    alert("Усі записи видалено!");
+    loadVolunteers();
+  }
+});
+
+loadVolunteers();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>  
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta name="description" content="Support Ecogo charity">  
+    <meta name="author" content="Ecogo">  
+
+    <title>Donate | Ecogo</title>  
+
+    <!-- CSS FILES -->  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">  
+    <link href="css/bootstrap-icons.css" rel="stylesheet">  
+    <link href="css/magnific-popup.css" rel="stylesheet">  
+    <link href="css/templatemo-first-portfolio-style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+            <img src="images/I.jpg" alt="Logo" style="height:60px;">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5">
+                <li class="nav-item"><a class="nav-link" href="index5.html#section_1">Home</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Main Section -->
+<main>
+
+<section class="hero d-flex justify-content-center align-items-center" style="background:#535da1; color:white;">
+    <div class="container text-center">
+        <h1 class="mb-3">Support Ecogo</h1>
+        <h4 class="mb-5">Every contribution helps protect animals 🌿 and our planet 🌎</h4>
+    </div>
+</section>
+
+<section class="section-padding" id="donate-section">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- Crypto -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card text-center p-4 shadow-lg h-100">
+                    <img src="images/crypto.png" alt="Crypto" class="mb-3" style="height:80px;">
+                    <h5 class="mb-3">Donate via Crypto</h5>
+                    <p>USDT (TRC20): <span id="wallet-address">TJ8z1xK2w9X3AbCdEfGh123456789</span></p>
+                    <button class="btn btn-primary" onclick="copyAddress()">Copy address</button>
+                </div>
+            </div>
+
+            <!-- PayPal -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card text-center p-4 shadow-lg h-100">
+                    <img src="images/paypal.png" alt="PayPal" class="mb-3" style="height:80px;">
+                    <h5 class="mb-3">Donate via PayPal</h5>
+                    <p>Your help supports our eco-projects and animal shelters.</p>
+                    <a href="https://www.paypal.me/yourlink" target="_blank" class="btn btn-success">Donate via PayPal</a>
+                </div>
+            </div>
+
+            <!-- Bank Card -->
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card text-center p-4 shadow-lg h-100">
+                    <img src="images/card.png" alt="Card" class="mb-3" style="height:80px;">
+                    <h5 class="mb-3">Donate via Card</h5>
+                    <p>Use Visa / MasterCard via our secure form.</p>
+                    <a href="#" class="btn btn-warning">Donate with Card</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container text-center">
+        <p class="mb-0 text-white">© 2025 Ecogo Charity. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+function copyAddress() {
+    const address = document.getElementById("wallet-address").textContent;
+    navigator.clipboard.writeText(address);
+    alert("Wallet address copied to clipboard!");
+}
+</script>
+
+</body>
+</html>
